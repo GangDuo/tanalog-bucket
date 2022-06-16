@@ -9,4 +9,13 @@ class UploadController extends Controller
     public function index() {
         return view('index');
     }
+
+    public function store(Request $request) {
+        $request->validate([
+            'file' => 'required'
+        ]);
+
+        $filename = $request->file('file')->store('');
+        return view('upload.store');
+    }
 }
