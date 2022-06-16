@@ -12,7 +12,8 @@ class UploadController extends Controller
 
     public function store(Request $request) {
         $request->validate([
-            'file' => 'required'
+            'file' => 'required',
+            'file2' => 'required',
         ]);
 
         $filename = $request->file('file')->store('');

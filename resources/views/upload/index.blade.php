@@ -12,7 +12,14 @@
 
 					<form method="POST" action="/upload" enctype="multipart/form-data">
 						{{ csrf_field() }}
-						<input type="file" id="file" name="file" class="form-control">
+						<ul>
+							<li class="py-4">
+								Tanalog：
+								<input type="file" id="file" name="file" class="form-control"></li>
+							<li class="py-4">
+								Tanalog2：
+								<input type="file" id="file2" name="file2" class="form-control"></li>
+						</ul>
 						<button type="submit">アップロード</button>
 					</form>
 
