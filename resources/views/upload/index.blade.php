@@ -1,19 +1,23 @@
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>ファイルアップロード</title>
-</head>
-<body>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('ファイルアップロード') }}
+        </h2>
+    </x-slot>
 
-	<form method="POST" action="/upload" enctype="multipart/form-data">
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
 
-		{{ csrf_field() }}
+					<form method="POST" action="/upload" enctype="multipart/form-data">
+						{{ csrf_field() }}
+						<input type="file" id="file" name="file" class="form-control">
+						<button type="submit">アップロード</button>
+					</form>
 
-	<input type="file" id="file" name="file" class="form-control">
-
-	<button type="submit">アップロード</button>
-
-	</form>
-
-</body>
-</html>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
